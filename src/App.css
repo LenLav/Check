@@ -2,9 +2,100 @@
   text-align: center;
 }
 
+.check{
+  width: 500px;
+  background-color: #f0f3f5;
+  margin: 30px auto;
+  color: #4d535f;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.check__div{
+  display: flex;
+  flex-wrap: wrap; /* перенос */
+}
+
+.check__div div{
+  /* border: 1px solid #aaa; */
+  margin: 4px auto;
+}
+
+.check__div-1{
+  flex: 1;
+  padding-left: 30px;
+  text-align: left;
+  color: #818c99;
+}
+
+.check__div-2{
+  flex: 1;
+  padding-right: 30px;
+  text-align: right;
+  color: #2a5885;
+}
+
+.check__div-tovar-1{
+  flex: 1;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.check__div-tovar-2{
+  flex: 6;
+  text-align: center;
+}
+
+.check__div-tovar-3{
+  flex: 4;
+  padding-right: 30px;
+  text-align: right;
+}
+
+.check__img{
+  width: 60px;
+}
+
+.check__div-wrap{
+  width: 100%;
+  margin: 0;
+}
+
+.check__hr{
+  margin-left: 30px;
+  margin-right: 30px;
+  color: #818c99;
+  background-color: #818c99;
+  border: none;
+  height: 1px;
+}
+
+.info{
+  color: #2c2d2e !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+.check__h2{
+  color: #000;
+  margin: 15px auto;
+  padding-top: 15px;
+}
+
+
+
+
+
+
+
+
+
 .TableCheck{
   width: 100% ;
   text-align: left;
+
+  /* display: flex; */
+  /* justify-content: flex-start; */
 }
 
 .TdLev{
@@ -23,22 +114,23 @@
   color: #2a5885;
   font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
   text-align: right;
 }
 
 .TdInfo{
   color: #2c2d2e !important;
-  font-size: 15px !important;
+  font-size: 16px !important;
   font-weight: bold !important;
 }
 
 .TdLev3{
-  width: 25% ;
+  /* border: 2px solid #c6cacf; */
+  width: 10%;
+  /* min-width: 40px; */
   padding-top: 10px;
   padding-left: 30px;
   color: #818c99;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -46,16 +138,17 @@
   width: 40%;
   padding-top: 10px;
   color: #818c99;
-  font-size: 14px;
+  text-align: center;
+  font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .TdPrav3{
-  width: 35%;
+  width: 40%;
   padding-top: 10px;
   padding-right: 30px;
   color: #2a5885;
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -72,7 +165,7 @@
   padding-bottom: 5px;
   margin-top: 0;
   margin-bottom: 0;
-  color: #111724;
+  color: #4d535f;
 }
 
 .Check{
@@ -111,28 +204,13 @@ text-decoration-line: none;
   justify-content: flex-start;
 }
 
-.razmer { /*ширина блоков контейнера*/
-  width: 45%;
-}
 
-.infoLev{ /*в профиле информация слева*/
-  color: #818c99;
-  font-size: 14px;
-  text-align: left;
-  margin-left: 40px;    
-}
 
-.infoPrav{  /*в профиле информация справа*/
-  color: #2a5885;
-  font-size: 14px;
-  /* text-align: left; */
-  text-align: left;
-  margin-left: 40px;    
-}
 
-.infoOsnovn{
-  color: #2c2d2e;
-}
+
+
+
+
 
 .App-logo {
   height: 40vmin;
@@ -218,3 +296,19 @@ counter-reset: test 0;
 counter-increment: test 5;
 content: counter(test);
 } 
+
+
+
+
+
+
+
+.hr-shelf {
+	margin: -30px auto 10px;
+	padding: 0;
+	height: 50px;
+	border: none;
+	border-bottom: 1px solid #1f1209;
+	box-shadow: 0 20px 20px -20px #333;
+	width: 95%;
+}
