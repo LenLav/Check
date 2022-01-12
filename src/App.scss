@@ -84,6 +84,26 @@
 
 
 
+.error__div{
+  margin: 10% auto 0px auto;
+  color: #4d535f;
+  font-weight: 300;
+  font-size: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+}
+
+.error__h1{
+  /* font-weight: normal; */
+  font-weight: 300;
+}
+
+.error__p{
+  font-weight: 300;
+}
+
+
+
 
 
 
@@ -265,14 +285,14 @@ text-decoration-line: none;
   
 }
 
-.btn_email{
+.app__button{
   /* width: 300px; */
-  height: 30px;
+  /* height: 30px; */
 
   background-color: #f0f3f5;
   border: none;
   border-radius: 3px;
-  width: 170px;
+  /* width: 170px; */
   height: 35px;
   color: #616c7a;
   font-size: 16px;
@@ -282,11 +302,17 @@ text-decoration-line: none;
    padding-left: 10%;  */
 
     /* &:hover{background-color: #c2ced8;} */
+
+    .app__button__error{
+  background-color: #ec0000;
+  }
 }
 
-.btn_email:hover{
+.app__button:hover{
   background-color: #c2ced8;
 }
+
+
 
 #Tovar {
 counter-reset: test 0;
@@ -303,12 +329,10 @@ content: counter(test);
 
 
 
-.hr-shelf {
-	margin: -30px auto 10px;
+.hr-dotted {
+	margin: 20px 0;
 	padding: 0;
-	height: 50px;
+	height: 0;
 	border: none;
-	border-bottom: 1px solid #1f1209;
-	box-shadow: 0 20px 20px -20px #333;
-	width: 95%;
+	border-top: 3px dotted #ddd;
 }
