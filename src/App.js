@@ -78,8 +78,6 @@ function App() {
 
       setFn(response.data.cashbox.fn)
       setSno(response.data.sno)
-
-      // console.log(response.result.taskJson.parameters.items)
       
       setOfd(response.data.ofd);
       setСashboxModel(response.data.cashbox.cashboxModel);
