@@ -6,8 +6,8 @@ import App from './App';
 
 ReactDOM.render(
 <div>
-  {/* Приложение работает!
-  <p><button>Кнопка</button></p> */}
+  {/* Приложение работает!*/}
+  <p>сервис просмотра чеков</p> 
   <App />
 </div>,
     //  <App />,
