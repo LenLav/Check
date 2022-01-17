@@ -1,47 +1,39 @@
 import './App.scss';
-// import logo from './img/Logo_vti_1.png';
-
 import React, { useEffect, useState } from 'react';
 import { fetchCheck } from './Api/index'
 
+// import logo from './img/Logo_vti_1.png';
+
+
 function App() {
-  const [Data, setData] = useState([]);
-  const [CheckOrg, setCheckOrg] = useState(1);
-  const [CheckTovar, setCheckTovar] = useState([]);
-  const [count, setCount] = useState(0);
-  const [Sum, setSum] = useState([]);
-  const [Ofd, setOfd] = useState([]);
-  const [СashboxModel, setСashboxModel] = useState([]);
+  const [Data, setData] = useState([]);   //response.data
 
-  const [Rez, setRez] = useState(null);
-
-  const [PaymentMethod, setPaymentMethod] = useState([]);//dictionaries PaymentMethod
-  const [PaymentObject, setPaymentObject] = useState([]);//dictionaries PaymentObject
-  const [NDS, setNDS] = useState([]);//dictionaries NDS
-
+  const [Ofd, setOfd] = useState([]);   //response.data.ofd
   const [Fn, setFn] = useState([]);
   const [Sno, setSno] = useState([]);
   const [TradePlace, setTradePlace] = useState();
 
-  const [clientInfo, setclientInfo] = useState();
+  const [CheckTovar, setCheckTovar] = useState([]);   //список товаров(услуг)
+  const [Sum, setSum] = useState([]);
   const [TypePay, setTypePay] = useState();
   const [Type_check, setType_check] = useState();
 
-  // const EmailHref = "https://e.mail.ru/compose/?mailto=mailto%3A" + CheckOrg.email;
+  const [clientInfo, setclientInfo] = useState();
+  const [CheckOrg, setCheckOrg] = useState([]);   //response.data.organization  
 
+  //////////....dictionaries....///////////////
+  const [PaymentMethod, setPaymentMethod] = useState([]);//dictionaries PaymentMethod
+  const [PaymentObject, setPaymentObject] = useState([]);//dictionaries PaymentObject
+  const [NDS, setNDS] = useState([]);//dictionaries NDS
 
   
-  function click(){
-    console.log("клик")
-  }
 
-  function click2(){
+
+  function reload(){
     window.location.reload();
   }
 
-  function UserGreeting() {
-    console.log("pag")
-  }
+ 
 
   // const [response, setResponse] = useState(null);
 
@@ -64,12 +56,6 @@ function App() {
 
       
 
-      console.log(response.data)
-      console.log(response.data.id)
-      setRez(response.data)
-      console.log(Rez)
-      // console.log(Rez.id)
-
       setData(response.data);
       setCheckOrg(response.data.organization);
       setCheckTovar(response.data.taskJson.parameters.items);
@@ -80,7 +66,6 @@ function App() {
       setSno(response.data.sno)
       
       setOfd(response.data.ofd);
-      setСashboxModel(response.data.cashbox.cashboxModel);
 
 
       setType_check(response.data.receiptType.name)
@@ -104,15 +89,13 @@ function App() {
         document.getElementById('TradePlace1').hidden = false
         document.getElementById('TradePlace2').hidden = false
         setTradePlace(response.data.tradePlace)
-        console.log(TradePlace)
       }
 
-      console.log(response.data.taskJson.parameters.items.length)
 
       for (let i = 0; i < response.data.taskJson.parameters.items.length; i++) {
         const element = response.data.taskJson.parameters.items[i];
-        console.log(element.paymentMethod)
-        console.log(element.paymentObject)
+        // console.log(element.paymentMethod)
+        // console.log(element.paymentObject)
 
         for (let pM = 0; pM < response.dictionaries.paymentMethod.length; pM++) {
           if(element.paymentMethod === response.dictionaries.paymentMethod[pM].eng){
@@ -128,7 +111,6 @@ function App() {
       setPaymentObject(response.dictionaries.paymentObject)
       setNDS(response.dictionaries.tax)
 
-      console.log(response.dictionaries.paymentObject)
 
      
 
@@ -147,6 +129,8 @@ function App() {
   return (
     <body>
     <div className="App">  
+
+    <p className='app__p'>Чек сформирован облачной кассой <a href='https://gate.stage.vdpaybox.ru/#/' className='app__a'>VDPayBox</a></p>
 
     <div id='success' hidden>  
 
@@ -195,8 +179,13 @@ function App() {
             
             <div className='check__div-wrap'></div>{/* перенос */}
 
-              <div className='check__div-1' id='TradePlace1' hidden>Торговая площадка</div>
-              <div className='check__div-2' id='TradePlace2' hidden>{TradePlace}</div>
+            <div className='check__div-1' id='TradePlace1' hidden>Торговая площадка</div>
+            <div className='check__div-2' id='TradePlace2' hidden>{TradePlace}</div>
+
+            <div className='check__div-wrap'></div>{/* перенос */}
+
+            <div className='check__div-1'>Сайт ФНС</div>
+            <div className='check__div-2'><a href='https://www.nalog.gov.ru/' target="_blank" className='app__a'>www.nalog.gov.ru</a></div> 
         </div>
 
         <hr className="hr-two-gradient"></hr>
@@ -268,12 +257,12 @@ function App() {
 
           <div className='check__div' style={{paddingTop: 20}}>
             <div className='check__div-1 info'>ИТОГО</div>
-            <div className='check__div-2 info'>{Sum}.00₽</div>
+            <div className='check__div-2 info'>{Data.sumDoc}.00₽</div>
             
             <div className='check__div-wrap'></div>{/* перенос */}
 
             <div className='check__div-1'>{TypePay}</div>
-            <div className='check__div-2'>{}.00₽</div>
+            <div className='check__div-2'>{Sum}.00₽</div>
             
             <div className='check__div-wrap'></div>{/* перенос */}
 
@@ -326,7 +315,7 @@ function App() {
           {/* <p>Пожалуйста, подождите, Ваш чек скоро появится.</p> */}
           <p>если адрес указан верно</p>
         </div>
-        <button onClick={click2} className="app__button-error">Повторить попытку</button>
+        <button onClick={reload} className="app__button-error">Повторить попытку</button>
       </div>
 
 

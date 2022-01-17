@@ -1,5 +1,5 @@
 $ColorCheck: #f0f3f5;
-$ColorDarckGreen: #056f09;
+$ColorDarckGreen: #044d06;
 
 body{
   background-color: #a4c8a5 !important;
@@ -8,6 +8,16 @@ body{
 .App {  
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app__p{
+  color: $ColorDarckGreen;
+}
+
+.app__a{
+  color: #232d8b;
+
+  &:hover{color: $ColorDarckGreen;} 
 }
 
 ///////////////////////////////////////////////
@@ -138,34 +148,7 @@ body{
   margin-top: 40px;
   }
 
-  ////////////////////////////////////
-
-  
-
-
-.hr-horizontal-gradient {
-	margin: 0 30px 5px 160px;
-	// padding: 0 30px;
-	height: 2px;
-	border: none;
-  // border-top: 1px solid linear-gradient(45deg, transparent, $ColorDarckGreen);
-  color:transparent;
-	background: linear-gradient(45deg, transparent, #a4c8a5);
-}
-
-.hr-two-gradient {
-  border: none;
-  height: 1px;
-  color: #282c34; 
-  background: -webkit-linear-gradient(left, transparent 0%,#035c06 50%,transparent 100%);
-  }
-
-
-
-
-
-
-
+////////////////////////////////////
 
 .zig-zag {
   // margin: 32px 0;
@@ -196,6 +179,23 @@ body{
   left:0;
   width: 100%;
   position: relative;        
+}  
+
+.hr-horizontal-gradient {
+	margin: 0 30px 5px 160px;
+	// padding: 0 30px;
+	height: 2px;
+	border: none;
+  // border-top: 1px solid linear-gradient(45deg, transparent, $ColorDarckGreen);
+  color:transparent;
+	background: linear-gradient(45deg, transparent, #a4c8a5);
+}
+
+.hr-two-gradient {
+  border: none;
+  height: 2px;
+  color: #282c34; 
+  background: -webkit-linear-gradient(left, transparent 0%,#035c06 50%,transparent 100%);
 }
 
 .hr-dotted {
@@ -279,9 +279,3 @@ body{
     transform: rotate(360deg);
   }
 }
-
-
-
-
-
-
