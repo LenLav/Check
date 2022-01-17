@@ -185,7 +185,7 @@ function App() {
             <div className='check__div-wrap'></div>{/* перенос */}
 
             <div className='check__div-1'>Сайт ФНС</div>
-            <div className='check__div-2'><a href='https://www.nalog.gov.ru/' target="_blank" className='app__a'>www.nalog.gov.ru</a></div> 
+            <div className='check__div-2'><a href='https://www.nalog.gov.ru/' target="_blank" rel="noreferrer" className='app__a'>www.nalog.gov.ru</a></div> 
         </div>
 
         <hr className="hr-two-gradient"></hr>
@@ -219,12 +219,12 @@ function App() {
             
 
             {PaymentObject.map((object) =>
-            data.paymentObject == object.eng ?
+            data.paymentObject === object.eng ?
             <div className='check__div-tovar-2'>{object.name}</div>  :   <p></p>
              )} 
 
             {PaymentMethod.map((method) =>
-            data.paymentMethod == method.eng ?
+            data.paymentMethod === method.eng ?
             <div className='check__div-tovar-3'>{method.name}</div>  :   <p></p>
              )}
 
@@ -236,7 +236,7 @@ function App() {
             <div className='check__div-tovar-2'></div>
 
             {NDS.map((nds) =>
-            data.tax.type == nds.eng ?
+            data.tax.type === nds.eng ?
             <div className='check__div-tovar-3'>НДС: {nds.name}</div>  :   <p></p>
              )}
 
