@@ -1,9 +1,11 @@
 import axios from 'axios'
 
-export const fetchCheck = async() => {
-    try{        
-        const response = await axios.get('https://api.stage.vdpaybox.ru/api/receipt/deviceInfo/large21')
-        console.log(response.data.result)
+export const fetchCheck = async(id) => {
+    const URL = process.env.REACT_APP_SERVER_HOST + id
+    console.log(URL) 
+    try{  
+        const response = await axios.get(URL)
+        // console.log(response.data.result)
         return response.data.result
     }
     catch(error){
