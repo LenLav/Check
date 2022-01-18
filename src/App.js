@@ -7,11 +7,15 @@ import { Check } from './Check'
 function App() {
   return (
     // <body>
+    <div>
 
       <Routes>
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<About />} />
         <Route path="/info/:id" element={<Check /> } />
       </Routes>
+    </div>
+      
+      
 
     // </body>
   );
