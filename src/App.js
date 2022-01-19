@@ -1,8 +1,9 @@
+import './App.scss';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 
-import { About } from './App2'
-import { Check } from './Check'
+import { DefaultPage } from './Components/DefaultPage'
+import { Check } from './Components/Check'
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
     <div>
 
       <Routes>
-        <Route path="/" element={<About />} />
+        <Route path="/" element={<DefaultPage />} />
         <Route path="/info/:id" element={<Check /> } />
       </Routes>
     </div>

@@ -5,7 +5,7 @@ export const fetchCheck = async(id) => {
     console.log(URL) 
     try{  
         const response = await axios.get(URL)
-        // console.log(response.data.result)
+        console.log(response.data.result)
         return response.data.result
     }
     catch(error){

@@ -1,6 +1,6 @@
-import './App.scss';
+import '../App.scss';
 import React, { useEffect, useState } from 'react';
-import { fetchCheck } from './api/index'
+import { fetchCheck } from '../api/index'
 
 import { useParams } from 'react-router-dom';
 
