@@ -1,5 +1,3 @@
-import '../App.scss';
-
 const NotFoundCheck = () => {
     return(
         <div>

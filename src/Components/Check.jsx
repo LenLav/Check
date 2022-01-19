@@ -4,6 +4,8 @@ import { fetchCheck } from '../api/index'
 
 import { useParams } from 'react-router-dom';
 
+import { Header } from './Header';
+
 
 const Check = () => {
 const id = useParams().id
@@ -131,11 +133,13 @@ const id = useParams().id
 
   return (
 
-    <div className="App">  
+    <div className="check-container">  
 
-    <p className='app__p'>Чек сформирован облачной кассой <a href='https://gate.stage.vdpaybox.ru/#/' className='app__a'>VDPayBox</a></p>
+    <Header />
 
     <div id='success' hidden>  
+
+    
 
       <div className='check zig-zag' id='check'>  
 

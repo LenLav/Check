@@ -1,18 +1,23 @@
 $ColorCheck: #f0f3f5;
 $ColorDarckGreen: #044d06;
+$PaddingCheck: 30px;
 
 body{
   background-color: #a4c8a5 !important;
-}
-
-.App {  
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.check-container {  
+  width: 500px;
+  margin: 25px auto;
 }
 
 .app__p{
   color: $ColorDarckGreen;
-  margin-top: 15px;
+  // margin-top: 15px;
+  margin: 15px auto;
 }
 
 .app__a{
@@ -24,9 +29,9 @@ body{
 ///////////////////////////////////////////////
 
 .check{
-  width: 500px;
+  
   background-color: #f0f3f5;
-  margin: 30px auto;
+  margin-top: 30px;
   color: #4d535f;
   font-size: 14px;
   overflow-wrap: break-word;
@@ -47,14 +52,14 @@ body{
 
 .check__div-1{
   flex: 1;
-  padding-left: 30px;
+  padding-left: $PaddingCheck;
   text-align: left;
   color: #818c99;
 }
 
 .check__div-2{
   flex: 1;
-  padding-right: 30px;
+  padding-right: $PaddingCheck;
   text-align: right;
   color: #2a5885;
 }
@@ -63,7 +68,7 @@ body{
 
 .check__div-tovar-1{
   flex: 1;
-  padding-left: 30px;
+  padding-left: $PaddingCheck;
   text-align: left;
 }
 
@@ -74,7 +79,7 @@ body{
 
 .check__div-tovar-3{
   flex: 5;
-  padding-right: 30px;
+  padding-right: $PaddingCheck;
   text-align: right;
 }
 
@@ -168,12 +173,12 @@ body{
   background: linear-gradient(-45deg, transparent 16px, $ColorCheck 0), linear-gradient(45deg, transparent 16px, $ColorCheck  0);
   // background-repeat: repeat-x;
   // background-position: left bottom;
-  top: 20px;
+  top: 10px;
 }
 .zig-zag:before,
 .zig-zag:after {
   // background-repeat: repeat-x;
-  background-size: 22px;
+  background-size: 20px;
   content: "";
   display: block;
   height: 22px;
@@ -222,7 +227,45 @@ body{
 
 
 
+@media screen and (max-width: 500px) {
+  $PaddingCheck: 15px;
+  
+  .check-container {  
+    width: 100%;
+  }
 
+  .div_word-wrap{
+    width: 50vw;
+    border: 2px solid yellow;
+  }
+
+  .check__div-1,
+  .check__div-tovar-1{
+    padding-left: $PaddingCheck;
+  }
+
+  .check__div-2,
+  .check__div-tovar-3{
+    padding-right: $PaddingCheck;
+  }
+
+  .hr-horizontal-gradient {
+    margin: 0 15px 5px 160px;
+  }
+
+
+}
+
+@media screen and (max-width: 360px) {
+  .check-container {  
+    width: 360px;
+    margin: 25px auto;
+  }
+
+  .div_word-wrap{
+    width: 180px;
+  }
+}
 
 
 
