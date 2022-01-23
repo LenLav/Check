@@ -36,6 +36,7 @@ body{
   font-size: 14px;
   overflow-wrap: break-word;
   // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0px 10px 18px 6px rgba(34, 60, 80, 0.2);
 }
 
 .check__div{
@@ -124,10 +125,11 @@ body{
 ////////////////////////////////////
 
 .error__div{
-  margin: 10% auto 0px auto;
+  margin: 30px auto 0px auto;
   color: #4d535f;
   font-weight: 200;
   font-size: 18px;
+  box-shadow: 0px 10px 18px 6px rgba(34, 60, 80, 0.2);
   }
 
 ////////////////////////////////////
@@ -173,7 +175,7 @@ body{
   background: linear-gradient(-45deg, transparent 16px, $ColorCheck 0), linear-gradient(45deg, transparent 16px, $ColorCheck  0);
   // background-repeat: repeat-x;
   // background-position: left bottom;
-  top: 10px;
+  top: 12px;
 }
 .zig-zag:before,
 .zig-zag:after {
@@ -231,12 +233,12 @@ body{
   $PaddingCheck: 15px;
   
   .check-container {  
-    width: 100%;
+    width: 96vw;
   }
 
   .div_word-wrap{
     width: 50vw;
-    border: 2px solid yellow;
+    // border: 2px solid yellow;
   }
 
   .check__div-1,
