@@ -1,9 +1,11 @@
 $ColorCheck: #f0f3f5;
 $ColorDarckGreen: #044d06;
+$ColorBack: #a4c8a5 !important;
 $PaddingCheck: 30px;
 
 body{
-  background-color: #a4c8a5 !important;
+  background-color: $ColorBack;
+  color: $ColorDarckGreen !important;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -26,10 +28,37 @@ body{
   &:hover{color: $ColorDarckGreen;} 
 }
 
+.check__input{
+  width: 250px;
+  border: none;
+  // border-bottom: 5px solid $ColorDarckGreen;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.div-border-bot{
+  box-shadow: 0px 3px 0px 0px #044d06d2;
+}
+
+
+.button-close{
+  border-radius: 50%;
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+
 ///////////////////////////////////////////////
 
-.check{
-  
+.check{  
   background-color: #f0f3f5;
   margin-top: 30px;
   color: #4d535f;
@@ -37,6 +66,17 @@ body{
   overflow-wrap: break-word;
   // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-shadow: 0px 10px 18px 6px rgba(34, 60, 80, 0.2);
+}
+
+.d-flex{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexbox{
+
 }
 
 .check__div{
@@ -138,23 +178,30 @@ body{
   background-color: #f0f3f5;
   border: none;
   border-radius: 4px;
-  width: 170px; 
-  height: 35px;
   color: #616c7a;
-  font-size: 16px;
   font-weight: 400;
 
   &:hover{background-color: #c2ced8;} 
 }
 
 .app__button-error{
-  @extend .app__button;
+  @extend .app__button; 
+  background-color: #e7e9eb;
+  margin-top: 40px;
+}
+
+
+.btn-m{
+  width: 170px; 
+  height: 35px;
+  font-size: 16px;
+}  
+
+.btn-l{
   height: 45px;
   width: 250px;
   font-size: 18px;
-  background-color: #e7e9eb;
-  margin-top: 40px;
-  }
+}  
 
 ////////////////////////////////////
 
@@ -223,6 +270,10 @@ body{
   height: 1px;
 }
 
+.m-lr-20{
+  margin: 0 20px;
+}
+
 
 
 
@@ -255,16 +306,22 @@ body{
     margin: 0 15px 5px 160px;
   }
 
-
+  .check__input{
+    width: 40vw;
+  }
 }
 
 @media screen and (max-width: 360px) {
   .check-container {  
-    width: 360px;
+    width: 350px;
     margin: 25px auto;
   }
 
   .div_word-wrap{
+    width: 180px;
+  }
+
+  .check__input{
     width: 180px;
   }
 }

@@ -6,7 +6,11 @@ const NotFoundCheck = () => {
                 <h1 style={{fontWeight: 300, marginTop: 0}}><hr className='hr-dotted'></hr>Чек скоро появится<hr className='hr-dotted'></hr></h1>
                 <p>если адрес указан верно</p>
 
-                <button onClick={() => window.location.reload()} className="app__button-error">Повторить попытку</button>
+                <button 
+                    onClick={() => window.location.reload()} 
+                    className="app__button-error btn-l">
+                    Повторить попытку
+                </button>
             </div>            
         // </div>
     )

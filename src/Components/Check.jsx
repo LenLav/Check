@@ -1,50 +1,34 @@
 import '../App.scss';
 import React, { useEffect, useState } from 'react';
 import { fetchCheck } from '../api/index'
-
-import { useParams } from 'react-router-dom';
-
+import { IndexFoundCheck} from '../components/foundCheck/index'
 import { Header } from './header';
 import { FoundCheck } from './foundCheck/foundCheck';
 import { NotFoundCheck } from './notFoundCheck';
 
 
 const Check = () => {
-  const id = useParams().id
 
-  useEffect(() => {
-    const fetch = async () => {
-      const response = await fetchCheck(id);
+  const response = IndexFoundCheck()
+  // console.log("response: ", response)
 
-      if (response === "error") {
-        document.getElementById('success').hidden = true
-        document.getElementById('error').hidden = false
-        return
-      }
-      else {
-        document.getElementById('success').hidden = false
-        document.getElementById('error').hidden = true
-      }
-    }
-    fetch();
-  }, [])
-
-
-  return (
-    <div className="check-container">
-
-      <Header />
-
-      <div id='success' hidden>
+  if (response === true) {
+    return (
+      <div className="check-container">
+        <Header />
         <FoundCheck />
       </div>
+    )
+  }
 
-      <div id='error' hidden>
+  if (response === false) {
+    return (
+      <div className="check-container">
+        <Header />
         <NotFoundCheck />
       </div>
-
-    </div>
-  );
+    )
+  }
 }
 
 export { Check } 
