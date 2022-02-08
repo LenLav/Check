@@ -1,5 +1,5 @@
 #PROD-CONFIG
-REACT_APP_SERVER_HOST = 'https://api.stage.vdpaybox.ru/api/receipt/deviceInfo/'
+REACT_APP_SERVER_HOST = 'https://api24.vdpaybox.ru/api/receipt/deviceInfo/'
 REACT_APP_OPEN_CHECK = 'https://rt.vdpaybox.ru/info/'
 REACT_APP_VDPAYBOX_HREF = "https://vdpaybox.ru/#/"
 

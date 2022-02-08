@@ -19,7 +19,7 @@ const Header = () => {
             <a className='app__a' onClick={copy}>Копировать ссылку</a>
             {
              Show ?
-             <span style={{fontWeight: 700, color: "$ColorDarckGreen", paddingLeft: 5, position: "fixed"}} >✓</span>
+             <span style={{fontWeight: 700, color: "$ColorDarckGreen", paddingLeft: 5, position: "absolute"}} >✓</span>
              : null
             }
         </div>
