@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import {typeCheck, data} from '../../components/foundCheck/index';
+import {typeCheck} from '../../components/foundCheck/index';
 
 import { ProductList } from './blocksFoundCheck/productList'
 import { InfoBlock } from './blocksFoundCheck/infoBlock'

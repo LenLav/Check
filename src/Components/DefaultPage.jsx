@@ -2,17 +2,11 @@ import React, { useState } from 'react';
 const DefaultPage = () => {
     var [Id_check, setId_check] = useState("");
 
-    const openCheck = () => {
-        
-        window.location.replace(process.env.REACT_APP_OPEN_CHECK_STAGE + Id_check);
-    }
-    // setId_check("123")
     return (
         <div className="check-container check zig-zag" style={{marginTop: 55}}>
             <div className='m-lr-20'>
-                <p>Введите уникальный идентификационный номер чека</p>
+                <p>Введите идентификационный номер чека</p>
                 <div className="d-flex ">
-                    {/* <p>https://rt.vdpaybox.ru/info/</p> */}
                     <div className='div-border-bot'>
                         <input 
                             autoFocus
@@ -29,7 +23,7 @@ const DefaultPage = () => {
                 </div>
                 <button
                     className='app__button-error btn-m'
-                    onClick={openCheck}>
+                    onClick={() => window.location.replace(process.env.REACT_APP_OPEN_CHECK + Id_check)}>
                     Открыть чек
                 </button>
             </div>

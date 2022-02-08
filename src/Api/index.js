@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const fetchCheck = async(id) => {
-    const URL = process.env.REACT_APP_SERVER_HOST_STAGE + id
+    const URL = process.env.REACT_APP_SERVER_HOST + id
     console.log(URL) 
     try{  
         const response = await axios.get(URL)

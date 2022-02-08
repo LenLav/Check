@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCheck } from '../../api/index'
 
@@ -79,7 +79,14 @@ const IndexFoundCheck = () => {
             setCheckOrg(response.data.organization);
             setCheckTovar(response.data.taskJson.parameters.items);
             setSum(response.data.taskJson.parameters.payments[0].sum);
-            setClientInfo(response.data.taskJson.parameters.clientInfo.emailOrPhone)
+            
+
+            if(response.data.taskJson.parameters.clientInfo){
+                setClientInfo(response.data.taskJson.parameters.clientInfo.emailOrPhone)
+            }
+            else{
+                setClientInfo("-")
+            }
 
             setFn(response.data.cashbox.fn)
             setSno(response.data.sno)
@@ -98,15 +105,15 @@ const IndexFoundCheck = () => {
                 setTypePay('Безналичными')
             }
 
-            if (response.data.tradePlace === null) {
-                document.getElementById('TradePlace1').hidden = true
-                document.getElementById('TradePlace2').hidden = true
-            }
-            else {
-                document.getElementById('TradePlace1').hidden = false
-                document.getElementById('TradePlace2').hidden = false
-                setTradePlace(response.data.tradePlace)
-            }
+            // if (response.data.tradePlace === null) {
+            //     document.getElementById('TradePlace1').hidden = true
+            //     document.getElementById('TradePlace2').hidden = true
+            // }
+            // else {
+            //     document.getElementById('TradePlace1').hidden = false
+            //     document.getElementById('TradePlace2').hidden = false
+            //     setTradePlace(response.data.tradePlace)
+            // }
 
             if (response.data.sumDoc.includes(".") === false &&
                 String(response.data.taskJson.parameters.payments[0].sum).includes(".") === false) {

@@ -1,6 +1,5 @@
 import '../App.scss';
-import React, { useEffect, useState } from 'react';
-import { fetchCheck } from '../api/index'
+import React from 'react';
 import { IndexFoundCheck} from '../components/foundCheck/index'
 import { Header } from './header';
 import { FoundCheck } from './foundCheck/foundCheck';
