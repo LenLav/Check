@@ -1,4 +1,4 @@
-import { data, fn } from '../index';
+import { data, fn, operator } from '../index';
 
 const Fiscalized = () => {
 
@@ -16,7 +16,12 @@ const Fiscalized = () => {
                 <div className='check__div-wrap'></div>{/* перенос */}
 
                 <div className='check__div-1'>Смена</div>
-                <div className='check__div-2'>{data.shift}</div>
+                <div className='check__div-2'>{data.shift ? data.shift : '-'}</div>
+
+                <div className='check__div-wrap'></div>{/* перенос */}
+
+                <div className='check__div-1'>Оператор</div>
+                <div className='check__div-2'>{operator}</div>
 
                 <div className='check__div-wrap'></div>{/* перенос */}
 

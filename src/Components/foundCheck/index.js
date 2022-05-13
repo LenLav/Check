@@ -11,6 +11,7 @@ var fn = ''
 var sno = ''
 var tradePlace = ''
 
+var operator = ''
 var checkTovar = ''
 var sum = ''
 var typePay = ''
@@ -25,14 +26,7 @@ var nds = ''
 
 var extraZero = ''
 
-
-
-// var [Data, setData] = ''
-// const data = Data
-
 const IndexFoundCheck = () => {
-    // rNumbers = '1'
-
     const [Result, setResult] = useState([]);   //response.data
 
     const [Data, setData] = useState([]);   //response.data
@@ -43,6 +37,7 @@ const IndexFoundCheck = () => {
     const [TradePlace, setTradePlace] = useState();
 
     const [CheckTovar, setCheckTovar] = useState([]);   //список товаров(услуг)
+    const [Operator, setOperator] = useState([]); 
     const [Sum, setSum] = useState([]);
     const [TypePay, setTypePay] = useState();
     const [TypeCheck, setType_check] = useState();
@@ -62,7 +57,6 @@ const IndexFoundCheck = () => {
     var response = '0'
     const [result2, setresult2] = useState(true);
 
-    // var result2 = true
 
     useEffect(() => {
         const fetch = async () => {
@@ -70,13 +64,14 @@ const IndexFoundCheck = () => {
 
             if (response === "error") { 
                 setresult2(false);
-                // alert("error")
-                // result2 = false
                 return 
             }
 
             setData(response.data);
             setCheckOrg(response.data.organization);
+            setOperator(response.data.taskJson.parameters.operator && response.data.taskJson.parameters.operator.name 
+                        ? response.data.taskJson.parameters.operator.name 
+                        : '' );
             setCheckTovar(response.data.taskJson.parameters.items);
             setSum(response.data.taskJson.parameters.payments[0].sum);
             
@@ -105,31 +100,18 @@ const IndexFoundCheck = () => {
                 setTypePay('Безналичными')
             }
 
-            // if (response.data.tradePlace === null) {
-            //     document.getElementById('TradePlace1').hidden = true
-            //     document.getElementById('TradePlace2').hidden = true
-            // }
-            // else {
-            //     document.getElementById('TradePlace1').hidden = false
-            //     document.getElementById('TradePlace2').hidden = false
-            //     setTradePlace(response.data.tradePlace)
-            // }
 
             if (response.data.sumDoc.includes(".") === false &&
                 String(response.data.taskJson.parameters.payments[0].sum).includes(".") === false) {
                 setExtraZero(".00₽")
-                // console.log("not includes .")
             }
             else {
                 setExtraZero("₽")
-                // console.log("includes .")
             }            
 
         }
         fetch();
     }, []);
-
-    // result = Result
     
     data = Data
     ofd = Ofd
@@ -137,6 +119,7 @@ const IndexFoundCheck = () => {
     sno = Sno
     tradePlace = TradePlace
 
+    operator = Operator
     checkTovar = CheckTovar
     sum = Sum
     typePay = TypePay
@@ -151,16 +134,8 @@ const IndexFoundCheck = () => {
 
     extraZero = ExtraZero
 
-    if(result2 === false){
-        // console.log(result2)
-    }
-    else{
-        // console.log(result2)
-    }
 
     return result2
-
-    
 }
 
 export { IndexFoundCheck }
@@ -171,6 +146,7 @@ export {
     fn,
     sno,
     tradePlace,
+    operator,
     checkTovar,
     sum,
     typePay,
@@ -181,5 +157,4 @@ export {
     paymentObject,
     nds,
     extraZero,
-
  };
